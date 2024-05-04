@@ -1,0 +1,60 @@
+{
+  "name": "devopsick-website",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.2",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frikadellios/devopsick-website.git"
+  },
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "license": "MIT",
+  "description": "2 years of localization with Astro, Bun",
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/react": "^3.3.2",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/ts-plugin": "^1.6.1",
+    "@astrojs/vercel": "^7.5.4",
+    "@tailwindcss/postcss": "^4.0.0-alpha.14",
+    "@tailwindcss/vite": "^4.0.0-alpha.14",
+    "@types/node": "^20.12.8",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.7.1",
+    "astro-zod-to-json-schema": "^0.0.2",
+    "bun-types": "^1.1.6",
+    "mdast-util-to-string": "^4.0.0",
+    "million": "^3.0.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.33.3",
+    "tailwindcss": "^4.0.0-alpha.14",
+    "typescript": "^5.4.5",
+    "undici-types": "^5.26.5",
+    "vite": "^5.2.11",
+    "zod": "^3.23.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Frikadellios/devopsick-website/issues"
+  },
+  "homepage": "https://github.com/Frikadellios/devopsick-website#readme",
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}
