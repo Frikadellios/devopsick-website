@@ -1,0 +1,36 @@
+{
+  "domain": "devopsick.com",
+  "company_name": "Devopsick Freelance",
+  "legal_name": "Astro Build Ltd.",
+  "baseurl": "https://devopsick.com",
+  "phone": "+380964630524",
+  "email": "info@devopsick.com",
+  "main_title": "Astro Website Complete Starter Template",
+  "main_description": "A complete astro starter template for landing pages, business website or any kind of website. With perfect configurations i.e. alias imports, content management boilerplate, professional folder and file structure.",
+  "social_links": [
+    {
+      "name": "Instagram",
+      "link": "https://instagram.com/"
+    },
+    {
+      "name": "Email",
+      "link": "mailto:info@devopsick.com"
+    },
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/"
+    },
+    {
+      "name": "Linkedin",
+      "link": "https://linkedin.com/"
+    },
+    {
+      "name": "Github",
+      "link": "https://github.com/"
+    },
+    { 
+      "name": "Discord", 
+      "link": "https://discord.com/" 
+    }
+  ]
+}
