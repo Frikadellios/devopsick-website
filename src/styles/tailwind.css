@@ -129,6 +129,9 @@ body {
   @apply text-base;
 }
 
+.hidden {
+  display: none;
+}
 
 .expressive-code .frame {
     --code-background: var(--sl-color-bg);

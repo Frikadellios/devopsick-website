@@ -35,7 +35,5 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "bun.debugTerminal.stopOnEntry": false,
-  "bun.runtime": "C:\\Users\\frika\\.bun\\bin\\bun.exe",
-  "npm.packageManager": "auto"
+  "npm.packageManager": "bun"
 }
