@@ -1,29 +1,50 @@
 ---
-import I18NHeaders from "@/i18n/I18nHeaders.astro"
-import { getLangFromUrl } from "@/i18n/config";
-
-const lang = getLangFromUrl(Astro.url);
-
+import Container from '@/components/Container.astro'
+import Navbar from '@/components/Navbar.astro'
+import I18NHeaders from '@/i18n/jsonLocales/I18nHeaders.astro'
+import { getLanguageFromUrl } from '@/i18n/jsonLocales/utils'
 import '@/styles/tailwind.css'
+import { cn } from '@/lib/utils'
+import BaseHead from '@/components/BaseHead.astro'
+import TailwindIndicator from "@/components/tailwind-indicator.astro";
+// NOTE: work with { Toaster } from "@/components/ui/sonner" but need to update dark theme
+import { Toaster } from "sonner";
 
-interface Props {
-  title: string
+type Props = {
+  title: string;
+  description?: string;
+  lang: string;
+  mainClass?: string;
+  bodyClass?: string;
 }
 
+const lang = getLanguageFromUrl(Astro.url)
+const { title, description, mainClass, bodyClass } = Astro.props as Props
 ---
 
-<html lang={lang}>
+<!doctype html>
+<html lang={lang} class="scroll-smooth bg-background text-foreground">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
-    <title>{Astro.props.title}</title>
+    <BaseHead title={title} description={description ?? ''} lang={lang} />
     <I18NHeaders />
   </head>
-  <body class="bg-background text-foreground">
-    <div class="max-w-screen-sm mx-auto min-h-[98vh] p-4">
-      <slot />
-    </div>
+  <body class={cn("flex flex-col min-h-screen", bodyClass)}>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T7CDGRPZ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <Navbar />
+    <Container>
+        <main class={cn(mainClass)}>
+            <slot />
+            <TailwindIndicator />
+            <Toaster richColors client:only="react" />
+        </main>
+    </Container>
   </body>
 </html>

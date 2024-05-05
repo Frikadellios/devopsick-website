@@ -5,13 +5,14 @@ import sitemap from "@astrojs/sitemap";
 import million from 'million/compiler';
 import mdx from "@astrojs/mdx";
 import { remarkReadingTime } from './src/utils/readTime.mjs';
-
 import vercel from "@astrojs/vercel/serverless";
+
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
-  output: "server",
+  output: "hybrid",
   adapter: vercel(),
   vite: {
     plugins: [million.vite({
@@ -40,5 +41,5 @@ export default defineConfig({
       wrap: true
     },
     drafts: true
-  })]
+  }), partytown()]
 });

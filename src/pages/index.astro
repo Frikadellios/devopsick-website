@@ -1,7 +1,7 @@
 ---
-import { getLangFromUrl } from "@/i18n";
+import { getLangFromUrl } from '@/i18n/ui/utils'
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLangFromUrl(Astro.url)
 
-return Astro.redirect(`/${lang}/`);
+Astro.redirect(`/${lang}/`)
 ---

@@ -1,0 +1,33 @@
+---
+// Assets Imports - Info
+import { testimonials } from '@/constants/index'
+
+// Atro Imports - Components
+
+import TestimonialCard from '@/components/cards/testimonial-card.astro'
+import { getLangFromUrl, useTranslations } from '@/i18n/ui/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+// Translation Imports
+---
+
+<section class="flex flex-col text-white items-center gap-10 pb-10 pt-8" id="testimonials">
+
+  <!-- Main Testimonio List -->
+  <div class="grid max-w-[1680px] grid-cols-1 gap-5 px-10 md:grid-cols-3">
+    {
+      testimonials
+        .slice(0, 3)
+        .map((item) => <TestimonialCard name={item.name[lang]} review={item.review[lang]} image={item.image}/>)
+    }
+  </div>
+  <!-- Secondary Testimonio List, hidden in mobile -->
+  <div class="hidden max-w-[1680px] grid-cols-3 gap-5 px-10 md:grid">
+    {
+      testimonials
+        .slice(3, 6)
+        .map((item) => <TestimonialCard name={item.name[lang]} review={item.review[lang]} image={item.image}/>)
+    }
+  </div>
+</section>

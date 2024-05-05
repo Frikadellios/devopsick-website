@@ -3,6 +3,7 @@ import { astroZodCollectionsToJsonSchemas } from 'astro-zod-to-json-schema';
 
 // Typescript validation for the Blog Content
 const blogCollection = defineCollection({
+  type: 'content',
   schema: ({ image }) => z.object({
 	id: z.string().min(1).max(1000),
     metaTitle: z.string().max(60, "For optimze SEO, please provide a title with 60 characters or less").optional(),
@@ -11,7 +12,7 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
 	pubDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
-	language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr']).optional(),
+	language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr', 'nl']).optional(),
 	draft: z.boolean().default(false),
     authors: z.array(z.string()).default(['Admin']),
     categories: z.array(z.string()),
@@ -32,7 +33,7 @@ const blogCollection = defineCollection({
     schema: () => z.object({
       title: z.string().max(60, "For optimze SEO, please provide a title with 60 characters or less"),
       excerpt: z.string().max(160, "For optimze SEO, please provide a excerpt/description with 160 characters or less"),
-	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr']).optional(),
+	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr', 'nl']).optional(),
       date: z.date(),
     }),
   })
@@ -57,14 +58,14 @@ const blogCollection = defineCollection({
       dla: z.enum(["2021", "2022", "2023"]),
       stream: z.string(),
       skills: z.array(z.string()),
-	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr']).optional(),
+	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr', 'nl']).optional(),
     })
   })
 
   const topic = defineCollection({
 	schema: z.object({
 	  title: z.string(),
-	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr']).optional(),
+	  language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr', 'nl']).optional(),
 	}),
   });
 
@@ -73,7 +74,7 @@ const blogCollection = defineCollection({
 	  z.object({
 		firstname: z.string(),
 		lastname: z.string(),
-		language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr']).optional(),
+		language: z.enum(['en', 'es', 'uk', 'ru', 'de', 'fr', 'nl']).optional(),
 		avatar: image().refine((img) => img.width >= 96, {
 		  message: "Author avatar image must be at least 96 pixels wide!",
 		}),

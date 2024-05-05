@@ -6,17 +6,36 @@ import type {
 } from '@/types/site.config'
 import { LinkPreset } from '@/types/site.config'
 
+export const SITE_URL: string = 'https://devopsick.com'
+export const SITE_TITLE: string = 'Devopsick Blog'
+export const SITE_DESCRIPTION: string = 'Welcome to my website!'
+export const pagination = {
+    postsPerPage: 12,
+  }
+export const siteThemeColor = '#000000'
+export const DEFAULT_LOCALE = 'en'
+export const LOCALES = {
+  en: 'en', // the `defaultLocale` value must present in `locales` keys
+  fr: 'fr',
+  es: 'es',
+  ru: 'ru',
+  uk: 'uk',
+  de: 'de',
+  nl: 'nl',
+}
+
+
 export const siteConfig: SiteConfig = {
-  title: 'DevOpSick',
-  subtitle: 'Demo Site',
-  lang: 'en', // 'en', 'zh_CN', 'zh_TW', 'ja'
+  title: SITE_TITLE,
+  subtitle: SITE_DESCRIPTION,
+  lang: DEFAULT_LOCALE, // 'en', 'zh_CN', 'zh_TW', 'ja'
   themeColor: {
     hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
     fixed: false, // Hide the theme color picker for visitors
   },
   banner: {
     enable: false,
-    src: 'assets/images/demo-banner.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: 'assets/trancperent.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   },
   favicon: [ // Leave this array empty to use the default favicon
     // {
@@ -26,7 +45,7 @@ export const siteConfig: SiteConfig = {
     // }
   ],
   author: '',
-  description: '',
+  description: SITE_DESCRIPTION,
   ogLocale: '',
   shareMessage: '',
   paginationSize: 0
@@ -76,9 +95,3 @@ export const licenseConfig: LicenseConfig = {
   url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
 }
 
-export const site = 'https://example.com'
-export const siteTitle = 'DevOpSick'
-export const siteThemeColor = '#000000'
-export const pagination = {
-  postsPerPage: 12,
-}
